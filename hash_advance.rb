@@ -5,9 +5,12 @@ tweet_values = [
   [1, '激バズり', '今日は学校でタピオカ飲んでやった。先生はそれをみて羨ましそうだった。'],
   [2, '悲しいツイート', '今日は学校でうんち漏らした。悲しかった。']
 ]
-# tweets_hashをtweet_keysとtweet_valuesを用いて作成する。
-# 以下のような形にする。
-tweets_hash = tweet_keys.zip(tweet_values[0])
 
-tweets_hash = tweets_hash.flatten(1)
-p Hash[*tweets_hash]
+# tweet_keysとtweet_valuesからHashを作り、配列(tweets)に格納
+tweets = tweet_values.map { |element| Hash[tweet_keys.zip(element)] }
+
+# tweets_hashに各配列を結合
+tweets_hash = profile_hash.merge({tweets: tweets}, user_attributes_hash)
+
+p tweets
+p tweets_hash
