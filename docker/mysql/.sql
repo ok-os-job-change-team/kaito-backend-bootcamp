@@ -1,8 +1,7 @@
-create table mydb.user(id int, name varchar(10));
+CREATE TABLE table mydb.user(id int, name varchar(10));
 
-insert into mydb.user values (1, 'Kaito');
-insert into mydb.user values (2, 'Shoichi');
-insert into mydb.user values (3, 'Daisuke');
-insert into mydb.user values (4, 'Ryosuke');
-insert into mydb.user values (5, 'Hiiro');
-
+INSERT INTO mydb.user values (1, 'Kaito');
+INSERT INTO mydb.user values (2, 'Shoichi');
+INSERT INTO mydb.user values (3, 'Daisuke');
+INSERT INTO mydb.user values (4, 'Ryosuke');
+INSERT INTO mydb.user values (5, 'Hiiro');
