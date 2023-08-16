@@ -13,7 +13,7 @@ Users {
 
 Tweets {
   integer id
-  string user_id
+  integer user_id
   string title
   string tweet_content
 }
