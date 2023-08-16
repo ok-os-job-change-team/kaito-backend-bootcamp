@@ -5,4 +5,3 @@ CREATE TABLE Users(
   created_at varchar(30),
   updated_at varchar(30)
 );
-
