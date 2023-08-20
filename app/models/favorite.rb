@@ -6,4 +6,8 @@ class Favorite
     @user_id = user_id
     @tweet_id = tweet_id
   end
+
+  def present?
+    id != nil 
+  end
 end
