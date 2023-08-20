@@ -20,7 +20,7 @@ class Tweet
   end
 
   def title_valid?
-    if title == nil || title.length == 0
+    if title == nil || title.empty?
       errors << 'titleを入力して下さい。'
       return false
     elsif title.length > 15
@@ -32,7 +32,7 @@ class Tweet
   end
 
   def tweet_content_valid?
-    if tweet_content == nil || tweet_content.length == 0
+    if tweet_content == nil || tweet_content.empty?
       errors << 'tweet_contentを入力して下さい。'
       return false
     elsif tweet_content.length > 100
@@ -50,13 +50,6 @@ class Tweet
   end
 
   def output_error_messages
-      errors.each do puts _1 end
+      errors.each { puts _1 }
   end
 end
-
-
-# user = User.new(id: 1, email: 'kaito@exampe.co.jp', password: 'p@ssw0rd_1', created_at: '2023-08-11', updated_at: '2023-08-12')
-# tweet = Tweet.build_by_user(user: user, id: 1, title: 'test_title', tweet_content: 'test_content')
-# binding.irb
-# tweet.valid?
-# tweet.output_error_messages
