@@ -8,7 +8,7 @@ Docker(Debian)
 $ docker compose up -d
 
 # コンテナに入る。
-$ docker exec -it db bash 
+$ docker exec -it database bash 
 
 # コンテナ内でMySQLクライアントを使う。
 $ mysql -u root -p
