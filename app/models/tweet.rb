@@ -1,6 +1,9 @@
+require_relative 'user'
+require_relative './model/support.rb'
+
 class Tweet
+  include Model::Support
   attr_reader :id, :user_id, :title, :tweet_content, :errors
-  require_relative 'user'
 
   def initialize(id:, user_id:, title:, tweet_content:)
     @id = id
@@ -13,10 +16,6 @@ class Tweet
   def self.build_by_user(user:, id:, title:, tweet_content:)
     user_id = user.id
     Tweet.new(user_id: user_id, id: id, title: title, tweet_content: tweet_content)
-  end
-
-  def present?
-    id != nil 
   end
 
   def title_valid?
@@ -50,6 +49,6 @@ class Tweet
   end
 
   def output_error_messages
-      errors.each { puts _1 }
+    errors.each { puts _1 }
   end
 end

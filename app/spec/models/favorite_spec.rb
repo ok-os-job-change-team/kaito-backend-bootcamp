@@ -1,4 +1,4 @@
-require_relative '../models/favorite'
+require_relative '../../models/favorite.rb'
 
 RSpec.describe Favorite do
 

@@ -1,10 +1,10 @@
-require_relative '../../models/user'
+require_relative '../../models/user.rb'
 
 RSpec.describe User do
   describe '#present?' do
     context 'idが存在する時' do
       it 'trueになる' do
-        user = User.new(id: 1, email: 'hoge@example.com', password: 'password')
+        user = described_class.new(id: 1, email: 'hoge@example.com', password: 'password')
         expect(user.present?).to eq true
       end
     end
