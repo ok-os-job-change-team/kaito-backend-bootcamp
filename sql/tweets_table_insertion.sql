@@ -9,5 +9,5 @@ VALUES
 (7, 7, 'Foodie alert', 'Tried sushi for the first time. #food'),
 (8, 1, 'Music vibes', 'Listening to some lo-fi. #music'),
 (9, 3, 'Gaming night', 'Playing my favorite video game. #gaming'),
-(10, 2, 'Starry night', 'Stargazing tonight. The sky looks beautiful! #stars');
+(10, 2, 'Starry night', 'Stargazing tonight. The sky looks beautiful! #stars'),
 (11, 1, 'こんにちは', '会社行きたくねえええ');
