@@ -5,7 +5,7 @@ begin
   print 'Pattern?: '
   pattern = gets.chomp
   regexp = Regexp.new(pattern)
-  rescue RegexpError => exception
+rescue RegexpError => exception
     puts "Invalid pattern: #{exception.message}"
     retry
 end

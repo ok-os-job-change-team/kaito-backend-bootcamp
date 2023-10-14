@@ -3,7 +3,7 @@
 ### 目次
 - [1. 例外の補足](#section1)
 - [2. 意図的に例外を発生させる方法](#section2)
-- [参考文献](#section3)
+- [参考文献/参考URL](#section3)
 ---------
 ### <a id="section1" href="#section1">1. 例外の補足</a>  
 #### ＜rescueメソッド＞
@@ -82,8 +82,49 @@
     end
   end
   ```
+#### ＜throw/catchメソッド＞
+- throwメソッドとcatchメソッドの組み合わせで、ネストの深いループから抜け出すことができる
+- chatchメソッドの引数はchatchしたいオブジェクト(通常はSymbol)を指定する
+- throwメソッドの第一引数はchatchメソッドに指定したオブジェクト(通常はSymbol)を指定し、第二引数は戻り値を指定する
+- throwメソッドの戻り値はchatchに渡される
+  ``` ruby
+    catch (:sample_tag) do
+      throw :sample_tag, 戻り値
+    end
+  ```
+- 使用例
+  ```ruby
+  # iが2回、ｊが3回呼び出されたとき、ループを抜ける
+  message = catch(:break_loop) do
+    3.times do |i|
+      3.times do |j|
+        puts "i, j = #{i}, #{j}"
+        if i == 2 and j == 1
+          throw :break_loop, 'ループ抜けたよ'
+        end
+      end
+    end
+  end
 
-### <a id="section3" href="#section3">参考文献</a>
+  puts message
+  ```
+  ```bash
+  # 実行結果
+  $ ruby sample.rb
+  i, j = 0, 0
+  i, j = 0, 1
+  i, j = 0, 2
+  i, j = 1, 0
+  i, j = 1, 1
+  i, j = 1, 2
+  i, j = 2, 0
+  i, j = 2, 1
+  ループ抜けたよ
+  ```
+
+### <a id="section3" href="#section3">参考文献/参考URL</a>
 - プロを目指す人のためのRuby入門_9章「例外処理を理解する」
+- https://docs.ruby-lang.org/ja/latest/method/Kernel/m/throw.html
+- https://qiita.com/harvath/items/e716179538bc1da30f88
 
 ### [ページTOPに戻る](#index)
