@@ -6,8 +6,8 @@ begin
   pattern = gets.chomp
   regexp = Regexp.new(pattern)
 rescue RegexpError => exception
-    puts "Invalid pattern: #{exception.message}"
-    retry
+  puts "Invalid pattern: #{exception.message}"
+  retry
 end
 
 matches = text.scan(regexp)

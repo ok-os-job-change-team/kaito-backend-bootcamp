@@ -84,9 +84,9 @@
   ```
 #### ＜throw/catchメソッド＞
 - throwメソッドとcatchメソッドの組み合わせで、ネストの深いループから抜け出すことができる
-- chatchメソッドの引数はchatchしたいオブジェクト(通常はSymbol)を指定する
-- throwメソッドの第一引数はchatchメソッドに指定したオブジェクト(通常はSymbol)を指定し、第二引数は戻り値を指定する
-- throwメソッドの戻り値はchatchに渡される
+- catchメソッドの引数はcatchしたいオブジェクト(通常はSymbol)を指定する
+- throwメソッドの第一引数はcatchメソッドに指定したオブジェクト(通常はSymbol)を指定し、第二引数は戻り値を指定する
+- throwメソッドの戻り値はcatchに渡される
   ``` ruby
     catch (:sample_tag) do
       throw :sample_tag, 戻り値
